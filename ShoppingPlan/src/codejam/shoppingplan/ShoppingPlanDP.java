@@ -129,7 +129,7 @@ public class ShoppingPlanDP {
 				List<Integer> allPoss = generateItemsSubSet(pi);
 				for(int load : allPoss)
 				{
-					int nextLoad = sol | allPoss.get(load);
+					int nextLoad = sol | load;
 					int newItems = getNewItems(sol, nextLoad);
 					boolean perishable = perishableLoad(newItems);
 					double cost = cost(s, newItems);
