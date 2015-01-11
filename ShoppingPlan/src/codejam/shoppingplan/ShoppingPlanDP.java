@@ -118,7 +118,8 @@ public class ShoppingPlanDP {
 
 	public double visit() {
 		double[][] stateMatrix = buildMatrix();
-		for (int sol = 0; sol < stateMatrix[0].length; sol++) {
+		int states = stateMatrix[0].length;
+		for (int sol = 0; sol < states; sol++) {
 			for (int i = 1; i < numShops; i++) {
 				Shop s = shops.get(i);
 				int allNewItems = getNewItems(sol, s.items);
@@ -150,7 +151,7 @@ public class ShoppingPlanDP {
 				}
 			}
 		}
-		return stateMatrix[0][stateMatrix[0].length - 1];
+		return stateMatrix[0][states - 1];
 
 	}
 
